@@ -1,0 +1,35 @@
+<div class="container-fluid" [ngStyle]="{'background-color': parentColorProperty}"><br>
+  <div class="row">
+    <div class="col-12">
+      <div class="jumbotron jumbotron-fluid bg-dark text-white">
+        <div class="container">
+          <h1 class="display-3">
+            523419 Avanced Web Application Development
+          </h1>
+          <p class="lead">
+            Lab #5
+          </p>
+        </div>
+    </div>
+</div>
+<div class="row" style="margin-top:30px">
+  <div class="col-6">
+    <app-ngclass></app-ngclass>
+  </div>
+  <div class="col-6">
+    <app-ngstyle (messageEvent)="receiveData($event)"></app-ngstyle>
+  </div>
+  <div class="col-6">
+    <app-ngif></app-ngif>
+  </div>
+  <div class="col-6">
+    <app-ngswitch></app-ngswitch>
+  </div>
+  <div class="col-12">
+    <app-ngfor></app-ngfor>
+  </div>
+</div>
+</div>
+</div>
+
+

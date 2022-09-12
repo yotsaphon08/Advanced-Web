@@ -22,3 +22,10 @@
 ]
 
 
+npm install
+
+ng g c components/... name
+ng g s services/...name
+
+
+

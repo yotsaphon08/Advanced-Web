@@ -1,0 +1,104 @@
+<div class="card">
+
+    <div class="card-body">
+        <h4 class="card-title">1st: Profile</h4>
+        <div class="row">
+            <div class="col-md-2">
+                <img src="https://scontent.fbkk5-7.fna.fbcdn.net/v/t1.15752-9/305146483_2220643948115770_7019138928517652333_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_eui2=AeFrXpRMCvGGmJDtxINLcT3-2S879-iSN6bZLzv36JI3ptEj34DilBP3gX0OTSq5ubsCjvR3UxNOd0BkuToKFHCw&_nc_ohc=tzWV4reM7u4AX98QLAg&_nc_ht=scontent.fbkk5-7.fna&oh=03_AVI4eahdnbaHXEA0u1K7MV2PUkVocXJKXjq6r5pwNujuKQ&oe=634599A5" class="img-thumbnail" alt="Your Image">
+            </div>
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        Profile
+                    </div>
+                    <div class="card-body">
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-id-card" aria-hidden="true"></i> Student ID:</div>
+                            <div class="col-lg-10 text-left">
+                              {{profile.studentid}}
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-user-circle" aria-hidden="true"></i> Name:</div>
+                            <div class="col-lg-10 text-left">
+                              {{profile.name}}
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-venus-mars" aria-hidden="true"></i> Gender:</div>
+                            <div class="col-lg-10 text-left">
+                              {{profile.gender}}
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-birthday-cake" aria-hidden="true"></i> Birth Year:</div>
+                            <div class="col-lg-10 text-left">
+                              {{profile.birthyear}}
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-birthday-cake" aria-hidden="true"></i> Age:</div>
+                            <div class="col-lg-10 text-left">
+                              {{2022-profile.birthyear}}
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-at" aria-hidden="true"></i> Email:</div>
+                            <div class="col-sm-10 text-left">
+                              {{profile.email}}
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-phone" aria-hidden="true"></i> Phone:</div>
+                            <div class="col-lg-10 text-left">
+                              {{profile.phone}}
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-address-book" aria-hidden="true"></i> Address:</div>
+                            <div class="col-lg-10 text-left">
+                                <button type="button" (click)="ClickAddresses()"
+                                 class="btn btn-info btn-sm">Show Address</button>
+
+                            </div>
+                        </div>
+                        <div class="row" style="padding: 5px;">
+                            <div class="col-lg-2"><i class="fa fa-address-book" aria-hidden="true"></i> Comment: </div>
+                            <div class="col-lg-10 text-left">
+                              <textarea [(ngModel)]="profile.comment" class="form-control" rows="5" id="profile.comment"></textarea><br/>
+                              <label for="profile.comment">Comment: {{profile.comment}}</label>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+<div class="card">
+    <div class="card-header">
+        โจทย์ส่วนที่ 1 (14 คะแนน)
+    </div>
+    <div class="card-body">
+        <ul>
+            <li>(1 คะแนน) Student ID : สามารถนำข้อมูลรหัส นศ. จากพร็อพเพอร์ตี้ profile มาแสดงได้</li>
+            <li>(1 คะแนน) Name : สามารถนำข้อมูลชื่อจากพร็อพเพอร์ตี้ profile มาแสดงได้</li>
+            <li>(1 คะแนน) Gender : สามารถนำข้อมูลเพศจากพร็อพเพอร์ตี้ profile มาแสดงได้</li>
+            <li>(1 คะแนน) Birth Year : สามารถนำข้อมูลปี คศ. เกิดจากพร็อพเพอร์ตี้ profile มาแสดงได้</li>
+            <li>(2 คะแนน) Age : สามารถนำข้อมูล Age ที่ได้จากการคำนวณปี คศ. เกิด (Birth Year) มาแสดงได้</li>
+            <li>(1 คะแนน) Email : สามารถนำข้อมูลอีเมล์จากพร็อพเพอร์ตี้ profile มาแสดงได้</li>
+            <li>(1 คะแนน) Phone : สามารถนำข้อมูลเบอร์มือถือจากพร็อพเพอร์ตี้ profile มาแสดงได้</li>
+            <li>(2 คะแนน) Address : สามารถนำข้อมูลที่อยู่จากพร็อพเพอร์ตี้ profile มาแสดงในรูปแบบ Alert เมื่อคลิกที่ปุ่ม show address ได้</li>
+            <li>(2 คะแนน) Comment : สามารถกรอกข้อมูล และแสดงข้อมูลนั้น ๆ ออกที่หน้าจอได้ทันที ดังตัวอย่าง</li>
+            <li>(2 คะแนน) รูปภาพฝั่งซ้ายมือ : สามารถนำ url ของรูปภาพจากพร็อพเพอร์ตี้ profile มาแสดงได้</li>
+          </ul>
+    </div>
+</div>
+<br/>

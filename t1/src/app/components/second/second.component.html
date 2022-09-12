@@ -1,0 +1,211 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">2nd: Product ReactiveForm</h4>
+    <div class="row">
+      <div class="col-md-8">
+        <form [formGroup]="productForm">
+          <div class="card">
+            <div class="card-header">Product Form</div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3">Product Type (3 pt.):</div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <select class="form-control" formControlName="type">
+                      <option
+                        *ngFor="let item of productType"
+                        value="{{ item }}"
+                      >
+                        {{ item }}
+                      </option>
+                    </select>
+                    <div
+                      *ngIf="p.type?.invalid && (p.type?.dirty || p.type?.touched)"
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="p.type?.errors?.['required']">
+                        ProductType is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">Product ID (1 pt.):</div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      formControlName="id"
+                    />
+                    <div
+                      *ngIf="p.id?.invalid && (p.id?.dirty || p.id?.touched)"
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="p.id?.errors?.['required']">
+                        ProductID is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">Product Name (1 pt.):</div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="name"
+                    />
+                    <div
+                      *ngIf="p.name?.invalid && (p.name?.dirty || p.name?.touched)"
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="p.name?.errors?.['required']">
+                        ProductName is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">Product Detail (1 pt.):</div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="detail"
+                    />
+                    <div
+                      *ngIf="p.detail?.invalid && (p.detail?.dirty || p.detail?.touched)"
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="p.detail?.errors?.['required']">
+                        ProductDetail is required.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">Quantity (3 pt.):</div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      formControlName="quantity"
+                    />
+                    <div
+                      *ngIf="p.quantity?.invalid && (p.quantity?.dirty || p.quantity?.touched)"
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="p.quantity?.errors?.['required']">
+                        Quantity is required.
+                      </div>
+                      <div *ngIf="p.quantity?.errors?.['min'] || p.quantity?.errors?.['max']">
+                        Quantity is incorrect.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3">Price (2 pt.):</div>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      formControlName="price"
+                    />
+                    <div
+                      *ngIf="p.price?.invalid && (p.price?.dirty || p.price?.touched)"
+                      class="alert alert-danger"
+                    >
+                      <div *ngIf="p.price?.errors?.['required']">
+                        Price is required.
+                      </div>
+                      <div *ngIf="p.price?.errors?.['min'] || p.price?.errors?.['max']">
+                        Price is incorrect.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2">
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    (click)="addProduct()"
+                  >
+                    Add (3 pt.)
+                  </button>
+                </div>
+                <div class="col-md-2">
+                  <button type="reset" class="btn btn-danger">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-header">Display</div>
+          <div class="card-body">
+            Form Value: {{ productForm.value | json}} <br /><br />
+            Form Status: {{productForm.status | json}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="card">
+  <div class="card-header">โจทย์ส่วนที่ 2 (17 คะแนน)</div>
+  <div class="card-body">
+    <ul>
+      <li>
+        (3 คะแนน) Product Type : สามาถรับข้อมูลจากผู้ใช้งานในรูปแบบ Dynamic
+        select list ด้วย *ngFor โดยดึงข้อมูลจาก productType ได้
+      </li>
+      <li>
+        (1 คะแนน) Product ID : สามาถรับข้อมูลจากผู้ใช้งานได้ เงื่อนไข คือ
+        ผู้ใช้งานจำเป็นต้องกรอก
+      </li>
+      <li>
+        (1 คะแนน) Product Name : สามาถรับข้อมูลจากผู้ใช้งานได้ เงื่อนไข คือ
+        ผู้ใช้งานจำเป็นต้องกรอก
+      </li>
+      <li>
+        (1 คะแนน) Product Detail : สามาถรับข้อมูลจากผู้ใช้งานได้ เงื่อนไข คือ
+        ผู้ใช้งานจำเป็นต้องกรอก
+      </li>
+      <li>
+        (5 คะแนน) Quantity : สามาถรับข้อมูลจากผู้ใช้งานได้ เงื่อนไข คือ
+        ผู้ใช้งานจำเป็นต้องกรอก และผู้ใช้จะต้องกรอกตัวเลขตั้งแต่ 1 - 50 เท่านั้น
+        ถ้าไม่เข้าเงื่อนไขแสดง alert ดังตัวอย่าง
+      </li>
+      <li>
+        (2 คะแนน) Price : สามาถรับข้อมูลจากผู้ใช้งานได้ เงื่อนไข คือ
+        ผู้ใช้งานจำเป็นต้องกรอก และผู้ใช้จะต้องกรอกตัวเลขตั้งแต่ 1 - 100000
+        เท่านั้น
+      </li>
+      <li>
+        (3 คะแนน) Add (button) : สามารถเพิ่มสินค้าใหม่ (push)
+        เข้าไปในพร็อพเพอร์ตี้ products ที่อยู่ใน ProductService ได้
+      </li>
+      <li>
+        (1 คะแนน) Display : สามารถแสดงข้อมูลที่ผู้ใช้งานกรอกจาก Product Form
+        พร้อมกับบอกสถานะ (status) ของ Form ได้
+      </li>
+    </ul>
+  </div>
+</div>
+<br />
